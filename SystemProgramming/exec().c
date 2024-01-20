@@ -7,12 +7,12 @@ int main() {
 
     
     if (execlp("ls", "ls", "-l", (char *)NULL) == -1) {
-        perror("exec s?hv bas verdi");
+        perror("exec sehv bas verdi");
         exit(EXIT_FAILURE);
     }
 
     
-    printf("Bu, execlp-d?n sonraki kod hiss?sidir. Bu s?tr icra olunmayacaq.\n");
+    printf("Bu, execlp-den sonraki kod hissesidir. Bu setr icra olunmayacaq.\n");
 
     return 0;
 }
