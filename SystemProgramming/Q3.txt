@@ -1,0 +1,30 @@
+#! /bin/bash
+
+if [ $# -ne 2 ]; then
+  echo "xahis olunur iki qovluq adi teyin edin"
+  exit 1
+fi 
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+  echo "xahis olunur bos qovluq adi teyin etmeyin"
+  exit 1
+fi
+
+if[ ! -d "$1" ]; then  
+  mkdir "$1"
+  echo "$1 qovlugu yaradildi"
+else 
+    echo "xeta:$1 qovlugu artiq movcuddur"
+    exit 1
+fi    
+
+if [ ! -d "$2" ]; then
+  mkdir "$2"
+  echo "$2 qovlugu yaradildi"
+else
+  echo "xeta:$2 qovlugu artiq movcuddur"
+  exit 1
+ fi
+
+ echo "Emeliyyat ugurla basa catdi"
+  

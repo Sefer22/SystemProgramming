@@ -1,0 +1,27 @@
+#! /bin/bash
+
+if [ $# -eq 0 ]; then
+  echo "Xahis olunur bir qovluq teyin edin"
+  exit 1
+fi  
+
+directory=$1
+
+if[ ! -d "$directory" ]; then
+  echo "Xahis olunur,duzgun qovluq yolu teyin edin"
+  exit 1
+fi  
+
+current_date=$(date+"%Y%m%d")
+
+for file in "$directory"/*; do
+   file_name=$(basename "$file")
+
+   new_file_name="${file_name%.*}_${current_date}.${file_name##*.}"
+
+   mv "$file" "$directory/$new_file_name"
+
+   echo "Adlandirilan fayl: $new_file_name"
+ done
+
+ echo "Butun fayllarin adlarina tarix elavee edildi"

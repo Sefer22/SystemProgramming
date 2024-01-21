@@ -1,0 +1,16 @@
+#! /bin/bash
+
+while true 
+do
+  echo "file adi daxil edin"
+  read file_name
+
+  if[ ! -e "$file_name" ]; then
+    echo "file yoxdur,yeni fayl daxil edin"
+  else
+      echo "fayl tapildi: $file_name"
+      break
+    fi
+done
+
+echo "Emeliyyat basa catdi"

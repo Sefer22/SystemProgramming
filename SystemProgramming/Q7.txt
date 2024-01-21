@@ -1,0 +1,21 @@
+#! /bin/bash
+
+if [ $# -eq 0 ]; then
+ echo "xahis olunur qovluq yolu teyin edin"
+ exit 1
+fi
+
+directory=$1
+
+if [ ! -d $directory ]l then
+  echo "xahis olunur duzgun qovluq yolu teyin edin"
+  exit 1
+fi  
+
+for file in "$directory"/*; do
+  file_name=$(basename "$file")
+
+  echo "fayl adi: $file_name"
+done
+
+echo "butun fayllarin adlari gosterildi"
